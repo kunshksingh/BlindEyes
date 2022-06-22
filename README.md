@@ -11,6 +11,7 @@ Built for **HoloLens 2** using the preview release of **MRTK3**
 
 Sources:
 Ackland, Peter et al. “World blindness and visual impairment: despite many successes, the problem is growing.” Community eye health vol. 30,100 (2017): 71-73.
+
 Links:
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/
 https://www.britannica.com/topic/history-of-the-blind-1996241
