@@ -7,7 +7,9 @@ So, what if we were to see with another one of our senses, specifically sound?
 
 BlindEyes is a way for the visually impaired to better see objects in their vicinity through enhanced sound. More instructions such as download instructions and usage instructions are to follow as the project progresses!
 
+
 Built for **HoloLens 2** using the preview release of **MRTK3**
+
 
 Sources:
 
