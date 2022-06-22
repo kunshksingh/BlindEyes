@@ -10,9 +10,11 @@ BlindEyes is a way for the visually impaired to better see objects in their vici
 Built for **HoloLens 2** using the preview release of **MRTK3**
 
 Sources:
+
 Ackland, Peter et al. “World blindness and visual impairment: despite many successes, the problem is growing.” Community eye health vol. 30,100 (2017): 71-73.
 
 Links:
+
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/
 https://www.britannica.com/topic/history-of-the-blind-1996241
 https://allabouteyes.com/see-past-fascinating-history-eyeglasses/#:~:text=The%20first%20wearable%20glasses%20known,or%20perched%20on%20the%20nose.
