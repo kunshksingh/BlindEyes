@@ -1,3 +1,125 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3d4d03a50de39f7340f24fe640a30227b83b1fc7a8216fa70cbbfc8ae3ca9fa
-size 4957
+{
+  "schemaVersion": 1,
+  "packages": {
+    "com.microsoft.mixedreality.openxr": {
+      "tarball": {
+        "hash": "e9fcfff63016",
+        "mtime": 1655921570680,
+        "size": 11612901,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mixedreality.openxr-1.4.1.tgz"
+      }
+    },
+    "com.microsoft.mrtk.accessibility": {
+      "tarball": {
+        "hash": "6b516de41ace",
+        "mtime": 1655921567359,
+        "size": 11999,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.accessibility-1.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.core": {
+      "tarball": {
+        "hash": "14f7be595634",
+        "mtime": 1655921567424,
+        "size": 103342,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.core-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.data": {
+      "tarball": {
+        "hash": "cbb1d0780fcb",
+        "mtime": 1655921567504,
+        "size": 88489,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.data-1.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.diagnostics": {
+      "tarball": {
+        "hash": "4fd7c352cb50",
+        "mtime": 1655921566828,
+        "size": 19392,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.diagnostics-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.environment": {
+      "tarball": {
+        "hash": "5ca4b09e563e",
+        "mtime": 1655921567114,
+        "size": 16357,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.environment-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.extendedassets": {
+      "tarball": {
+        "hash": "6e4e2696b0fc",
+        "mtime": 1655921579280,
+        "size": 48569146,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.extendedassets-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.graphicstools.unity": {
+      "tarball": {
+        "hash": "b8cb5dc7a3c3",
+        "mtime": 1655921569252,
+        "size": 9131872,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.graphicstools.unity-0.4.0.tgz"
+      }
+    },
+    "com.microsoft.mrtk.input": {
+      "tarball": {
+        "hash": "4c759870e80e",
+        "mtime": 1655921567742,
+        "size": 163813,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.input-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.spatialmanipulation": {
+      "tarball": {
+        "hash": "95053408cb39",
+        "mtime": 1655921567115,
+        "size": 134396,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.spatialmanipulation-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.standardassets": {
+      "tarball": {
+        "hash": "60fe2d0e616c",
+        "mtime": 1655921568314,
+        "size": 3937915,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.standardassets-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.uxcomponents": {
+      "tarball": {
+        "hash": "f8c60cea025a",
+        "mtime": 1655921566317,
+        "size": 154637,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.uxcomponents-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.uxcore": {
+      "tarball": {
+        "hash": "421d14e45036",
+        "mtime": 1655921566714,
+        "size": 63333,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.uxcore-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.mrtk.windowsspeech": {
+      "tarball": {
+        "hash": "f2dc7e22b08f",
+        "mtime": 1655921566828,
+        "size": 4385,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.mrtk.windowsspeech-3.0.0-pre.6.tgz"
+      }
+    },
+    "com.microsoft.spatialaudio.spatializer.unity": {
+      "tarball": {
+        "hash": "f1bb3b9fa495",
+        "mtime": 1655921576269,
+        "size": 83220614,
+        "localPath": "C:\\Users\\Administrator\\Desktop\\Development\\BlindEyes\\BlindEyes\\Packages\\MixedReality\\com.microsoft.spatialaudio.spatializer.unity-2.0.37.tgz"
+      }
+    }
+  }
+}
