@@ -5,6 +5,7 @@ using System.Threading;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 using TMPro;
 
@@ -18,19 +19,23 @@ public class AudioSweepManager : MonoBehaviour
     float timer;
     Camera MainCamera;
     AudioSweep sweeper;
-    RaycastHit[] m_Results;
   
+
+    protected ARRaycastManager raycastManager;
+
 
     private int raysToShoot;
   
 
     void Start()
     {
-        m_Results = new RaycastHit[2];
+       
         timer = 0.0f;
         MainCamera = Camera.main;
         outputCounter = 0;
         raysToShoot = 20;
+     
+        
         sweeper = new AudioSweep();
     }
 
@@ -39,7 +44,7 @@ public class AudioSweepManager : MonoBehaviour
     {
         //Trigger Method Every 5 seconds
         timer += Time.deltaTime;
-        if (timer >= 5.0f)
+        if (timer >= 7.0f)
         {
             TriggerRaycast();
             timer = 0.0f;
@@ -65,7 +70,7 @@ public class AudioSweepManager : MonoBehaviour
              *
              */
             shortTimer = 0.0f;
-            while (shortTimer < 0.1f)
+            while (shortTimer < 0.3f)
             {
                 shortTimer += Time.deltaTime;
             }
@@ -74,13 +79,21 @@ public class AudioSweepManager : MonoBehaviour
             angle += 2 * Mathf.PI / raysToShoot;
 
             Vector3 dir = new Vector3(transform.position.x * x, transform.position.y * y, 0);
-            RaycastHit[] hit = new RaycastHit[2];
-            Debug.DrawLine(transform.position, dir, Color.red, 2, false);
-            if (Physics.RaycastNonAlloc(new Ray(transform.position, dir), hit, 1000) >= 1)
+            List<ARRaycastHit> hit = new List<ARRaycastHit>();
+            Ray directionVector = new Ray(transform.position, dir);
+
+
+            if (raycastManager.Raycast(directionVector, hit))
             {
-                //Debug.Log("Hit!");
-                sweeper.trigger(hit[1].point, clip);
-              
+                foreach(ARRaycastHit instanceHit in hit)
+                {
+
+                    Debug.Log($"Raycast hit a {instanceHit.hitType}");
+                    /*if (instanceHit.hitType & TrackableType.)
+                    {
+                        sweeper.trigger(hit[0].point, clip);
+                    }*/
+                }
             }
         }
         /*
