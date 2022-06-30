@@ -11,7 +11,7 @@ using TMPro;
 
 public class AudioSweepManager : MonoBehaviour
 {
-    //public TextMeshPro output;
+   
     public AudioClip clip;
 
     int outputCounter;
@@ -48,7 +48,7 @@ public class AudioSweepManager : MonoBehaviour
     }
     //Create a raycast in the direction of the main camera
     void TriggerRaycast()
-    {
+    {   
         var sweeper = new AudioSweep();
 
 
@@ -57,8 +57,15 @@ public class AudioSweepManager : MonoBehaviour
         
         for (int i = 0; i < raysToShoot; i++)
         {
+            /*
+             * TODO:
+             * 
+             * The math below does not disperse the rays properly from the main camera. 
+             * Check math/code to make sure the raycasts emit 360 degrees around the main camera
+             *
+             */
             shortTimer = 0.0f;
-            while (shortTimer < 0.2f)
+            while (shortTimer < 0.1f)
             {
                 shortTimer += Time.deltaTime;
             }
@@ -67,13 +74,13 @@ public class AudioSweepManager : MonoBehaviour
             angle += 2 * Mathf.PI / raysToShoot;
 
             Vector3 dir = new Vector3(transform.position.x * x, transform.position.y * y, 0);
-            RaycastHit[] hit = new RaycastHit[1];
-            Debug.DrawLine(transform.position, dir, Color.red);
+            RaycastHit[] hit = new RaycastHit[2];
+            Debug.DrawLine(transform.position, dir, Color.red, 2, false);
             if (Physics.RaycastNonAlloc(new Ray(transform.position, dir), hit, 1000) >= 1)
             {
-
-                sweeper.trigger(hit[0].point, clip);
-                //TODO
+                //Debug.Log("Hit!");
+                sweeper.trigger(hit[1].point, clip);
+              
             }
         }
         /*
