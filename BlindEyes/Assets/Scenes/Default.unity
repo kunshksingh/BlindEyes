@@ -1778,8 +1778,6 @@ GameObject:
   - component: {fileID: 2351505567066972400}
   - component: {fileID: 2351505567066972404}
   - component: {fileID: 2351505567066972405}
-  - component: {fileID: 2351505567066972407}
-  - component: {fileID: 2351505567066972406}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1813,32 +1811,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   output: {fileID: 1648872986}
---- !u!114 &2351505567066972406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2351505567066972403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 2833944877742571293, guid: a3a8d68a54621c74092404588ee8b0c5, type: 3}
---- !u!114 &2351505567066972407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2351505567066972403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520bb47c46cf8624fafb307b7d1b862a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Camera: {fileID: 2351505567066972366}
 --- !u!4 &2351505567214626125
 Transform:
   m_ObjectHideFlags: 0
@@ -1872,6 +1844,7 @@ GameObject:
   - component: {fileID: 6400715629695852263}
   - component: {fileID: 5456432097633524312}
   - component: {fileID: 5731710784553202928}
+  - component: {fileID: 6400715629695852264}
   m_Layer: 0
   m_Name: MRTK XR Rig
   m_TagString: Untagged
@@ -4157,6 +4130,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a107350295baaf4489642caa92f05de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6400715629695852264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2351505567214626127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RaycastPrefab: {fileID: 2833944877742571293, guid: a3a8d68a54621c74092404588ee8b0c5, type: 3}
 --- !u!82 &6544427085390513922
 AudioSource:
   m_ObjectHideFlags: 0
