@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Threading;
+using System.Threading;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,75 +17,76 @@ public class AudioSweepManager : MonoBehaviour
 {
    
     public AudioClip clip;
+    public bool isEnabled;
 
-    //int outputCounter;
     float timer;
-    Camera MainCamera;
+    //Camera MainCamera;
     AudioSweep sweeper;
-
-    ARRaycastManager raycastManager;
-
-
-
+    float posX;
+    float posY;
+    float posZ;
+    Vector3 cameraPos;
+    
+    //private float angle = 0;
     private const int raysToShoot = 20;
-  
+
+    Thread raycastThread;
 
     void Start()
     {
-        //raycastManager = GetComponent<ARRaycastManger>();
         timer = 0.0f;
-        MainCamera = Camera.main;
-        //outputCounter = 0;
-     
-        
+        //MainCamera = Camera.main;
+
         sweeper = new AudioSweep();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        posX = transform.position.x;
+        posY = transform.position.y;
+        posZ = transform.position.z;
+        cameraPos = transform.position;
         //Trigger Method Every 7 seconds
         timer += Time.deltaTime;
         if (timer >= 7.0f)
         {
-            TriggerRaycast();
+            raycastThread = new Thread(TriggerRaycast);
+            raycastThread.Start();
             timer = 0.0f;
         }
-
-    }
-    void stallThreat()
-    {
-        float shortTimer = 0.0f;
-        while (shortTimer < 1.0f)
-        {
-            shortTimer += Time.deltaTime;
-        }
-    }
-    //Create a raycast in the direction of the main camera
-    void TriggerRaycast()
-    {   
-     
-        var sweeper = new AudioSweep();
-
       
-
+    }
+    //Stalls thread for a time shortTimer (in seconds)
+    /*void stallThread()
+    {
+        startShortTimer = true;
+        while (!reset)
+        {
+            
+        }
+    }*/
+    //Create a raycast in the direction of the main camera
+     void TriggerRaycast()
+    {   
+        var sweeper = new AudioSweep();
         float angle = 0;
-    
+        
         
         for (int i = 0; i < raysToShoot; i++)
         {
-            
-            
-            angle += 2 * 2 * Mathf.PI / raysToShoot;
+            Thread.Sleep(300);
+            angle += 2 * Mathf.PI / raysToShoot;
             float x = Mathf.Cos(angle);
             float z = Mathf.Sin(angle);
      
             RaycastHit[] hit = new RaycastHit[10];
             Debug.Log((angle*180)/(2*Mathf.PI));
            
-            Debug.DrawLine(MainCamera.transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/, Color.red, 20, false);
+            Debug.DrawLine(cameraPos, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
                   
-            if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/), hit, 1000) >= 1)
+            if (Physics.RaycastNonAlloc(new Ray(cameraPos, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/), hit, 1000) >= 1)
             {
                 Debug.Log("Hit!");
                 foreach (RaycastHit instanceHit in hit)
