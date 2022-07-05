@@ -6,9 +6,17 @@ Humans are born with 5 senses: smell, taste, touch, hearing, and sight. However,
 The history of blindness has not been as well documented as other disabililties. Early glasses can be dated back to the 13th century in Italy, but notable visually impaired figures such as Hellen Keller and Louis Braille only date as far back as the 19th century. Though lacking visual prowess, such people have improved versions of the other four senses. 
 
 So, what if we were to see with another one of our senses to map our surroundings, specifically sound?
+BlindEyes is a way for the visually impaired to better see objects in their vicinity through enhanced sound. Currently, sound integration i
 
-BlindEyes is a way for the visually impaired to better see objects in their vicinity through enhanced sound. More instructions such as download instructions and usage instructions are to follow as the project progresses!
+Features:
+* Togglable, automatic radar scanning of surrounding space using spatial sound
+* Manual radar scanning of surrounding space using spatial sound (WIP)
+* Visual feedback for radar scanning a space (WIP)
 
+Future Features:
+* Multilayer radar scanning
+* Moving object tracing and detection
+* Visual feedback for moving objects
 
 Built for **HoloLens 2** using the preview release of **MRTK3**
 
