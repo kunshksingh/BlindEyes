@@ -6,7 +6,7 @@ Humans are born with 5 senses: smell, taste, touch, hearing, and sight. However,
 The history of blindness has not been as well documented as other disabililties. Early glasses can be dated back to the 13th century in Italy, but notable visually impaired figures such as Hellen Keller and Louis Braille only date as far back as the 19th century. Though lacking visual prowess, such people have improved versions of the other four senses. 
 
 So, what if we were to see with another one of our senses to map our surroundings, specifically sound?
-BlindEyes is a way for the visually impaired to better see objects in their vicinity through enhanced sound. Currently, sound integration i
+BlindEyes is a way for the visually impaired to better see objects in their vicinity through enhanced sound. Currently, BlindEyes only has sound integration, so it is useful for those who are completely blind and cannot use sight to map the space around them. However, visual feeback is a work in progress, and will be integrated in the near future to improve the spatial awareness of those who are not completely blind.
 
 Features:
 * Togglable, automatic radar scanning of surrounding space using spatial sound
