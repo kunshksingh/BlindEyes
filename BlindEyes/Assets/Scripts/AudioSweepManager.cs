@@ -15,7 +15,7 @@ using TMPro;
 
 public class AudioSweepManager : MonoBehaviour
 {
-   
+
     public AudioClip clip;
     public bool isEnabled;
 
@@ -26,11 +26,13 @@ public class AudioSweepManager : MonoBehaviour
     float posY;
     float posZ;
     Vector3 cameraPos;
-    
-    //private float angle = 0;
+
+    int raysLeft;
+
+    private float angle;
     private const int raysToShoot = 20;
 
-    Thread raycastThread;
+    //Thread raycastThread;
 
     void Start()
     {
@@ -38,25 +40,28 @@ public class AudioSweepManager : MonoBehaviour
         //MainCamera = Camera.main;
 
         sweeper = new AudioSweep();
-        
+        angle = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        posX = transform.position.x;
-        posY = transform.position.y;
-        posZ = transform.position.z;
-        cameraPos = transform.position;
         //Trigger Method Every 7 seconds
         timer += Time.deltaTime;
-        if (timer >= 7.0f)
+        if (timer >= 5.1f)
         {
-            raycastThread = new Thread(TriggerRaycast);
-            raycastThread.Start();
             timer = 0.0f;
+            raysLeft = 20;
+            angle = 0.0f;
         }
-      
+        else if (timer >= 4.5f & raysLeft > 0)
+        {
+            timer -= 0.4f;
+            raysLeft -= 1;
+            angle += 2 * Mathf.PI / raysToShoot;
+            TriggerRaycast(angle);
+        }
+
     }
     //Stalls thread for a time shortTimer (in seconds)
     /*void stallThread()
@@ -68,91 +73,57 @@ public class AudioSweepManager : MonoBehaviour
         }
     }*/
     //Create a raycast in the direction of the main camera
-     void TriggerRaycast()
-    {   
+    void TriggerRaycast(float angle)
+    {
         var sweeper = new AudioSweep();
-        float angle = 0;
-        
-        
-        for (int i = 0; i < raysToShoot; i++)
-        {
-            Thread.Sleep(300);
-            angle += 2 * Mathf.PI / raysToShoot;
-            float x = Mathf.Cos(angle);
-            float z = Mathf.Sin(angle);
-     
-            RaycastHit[] hit = new RaycastHit[10];
-            Debug.Log((angle*180)/(2*Mathf.PI));
-           
-            Debug.DrawLine(cameraPos, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
-                  
-            if (Physics.RaycastNonAlloc(new Ray(cameraPos, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/), hit, 1000) >= 1)
-            {
-                Debug.Log("Hit!");
-                foreach (RaycastHit instanceHit in hit)
-                {
-                    if (instanceHit.collider.gameObject.tag == "SoundMesh")
-                    {
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.name);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.tag);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.position);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.rotation);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.localScale);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.name);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.tag);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.position);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.rotation);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.localScale);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.name);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.tag);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.position);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.rotation);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.localScale);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.parent.name);
-                        //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.parent.tag);
-                       
 
-                        sweeper.trigger(hit[0].point, clip);
-                    }
+        float x = Mathf.Cos(angle);
+        float z = Mathf.Sin(angle);
+
+        RaycastHit[] hit = new RaycastHit[10];
+        //Debug.Log((angle * 180) / (2 * Mathf.PI));
+
+        //Debug.DrawLine(transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/, Color.red, 20, false);
+
+        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(transform.position.x + x, posY, transform.position.z + z)/*Direction Vector*/), hit, 5000) >= 1)
+        {
+            //Debug.Log("Hit!");
+            //Debug.Log(hit[0].collider.gameObject.name);
+ 
+            for(int i = 0; i<hit.Length; i++)
+            {
+                if (hit[i].collider.gameObject.tag == "SoundMesh")
+                {
                    
-                }
+                    sweeper.trigger(hit[0].point, clip);
 
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.name);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.tag);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.position);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.rotation);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.localScale);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.name);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.tag);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.position);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.rotation);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.localScale);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.name);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.tag);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.position);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.rotation);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.localScale);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.parent.name);
+                    //Debug.Log("Hit: " + instanceHit.collider.gameObject.transform.parent.transform.parent.transform.parent.tag);
+                }
             }
 
-            //List<ARRaycastHit> ARHit = new List<ARRaycastHit>();
-      
+        }
 
-            /*
-            if (raycastManager.Raycast(directionVector, ARHit))
-            {
-                foreach(ARRaycastHit instanceHit in ARHit)
-                {
-                    
-                    Debug.Log($"Raycast hit a {instanceHit.ARHitType}");
-                    if (instanceHit.hitType & TrackableType.)
-                    {
-                        sweeper.trigger(hit[0].point, clip);
-                    }
-                    
-                }
-            }
-            */
-            
-        }
-        /*
-        outputCounter += 1;
-        var layerMask = ~0;
-        int hits = Physics.RaycastNonAlloc(MainCamera.transform.position, transform.forward, m_Results, 1000, layerMask);
-        for (int i = 0; i < hits; i++)
-        {
-            output.text = outputCounter + " Hit " + m_Results[i].collider.gameObject.name;
-        }
-        if (hits == 0)
-        {
-            output.text = outputCounter + " Did not hit";
-        }
-        */
     }
+
+
+
+
 
 
 
