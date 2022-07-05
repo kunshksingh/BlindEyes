@@ -80,7 +80,7 @@ public class AudioSweepManager : MonoBehaviour
         float x = Mathf.Cos(angle);
         float z = Mathf.Sin(angle);
 
-        RaycastHit[] hit = new RaycastHit[10];
+        RaycastHit[] hit = new RaycastHit[1];
         //Debug.Log((angle * 180) / (2 * Mathf.PI));
 
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/, Color.red, 20, false);
@@ -92,7 +92,7 @@ public class AudioSweepManager : MonoBehaviour
  
             for(int i = 0; i<hit.Length; i++)
             {
-                if (hit[i].collider.gameObject.tag == "SoundMesh")
+                if (!(hit[i].collider.gameObject == null) & hit[i].collider.gameObject.tag == "SoundMesh")
                 {
                    
                     sweeper.trigger(hit[0].point, clip);
