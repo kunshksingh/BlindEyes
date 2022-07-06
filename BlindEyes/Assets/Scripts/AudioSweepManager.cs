@@ -109,6 +109,10 @@ public class AudioSweepManager : MonoBehaviour
     {
         manualTrigger = true;
     }
+    public void togglePulse()
+    {
+        timerLock = !timerLock;
+    }
 
 
 

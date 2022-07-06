@@ -6,17 +6,12 @@ using TMPro;
 
 public class AudioPlayer : MonoBehaviour
 {
-    private int outputCounter;
+    //private int outputCounter;
 
     //public TextMeshPro output;
     public GameObject debugSphere;
     
     
-    void Start()
-    {
-        outputCounter = 0;
-       
-    }
     public void PlaySound(Vector3 pos, AudioClip clip)
     {
         //output = new TextMeshPro();
