@@ -50,7 +50,7 @@ After Steps 4-6, the top bar of your BlindEyes.sln should look like this:
 
 [History of Blind](https://www.britannica.com/topic/history-of-the-blind-1996241) 
 
-[Fascinating History of Eyeglasses] (https://allabouteyes.com/see-past-fascinating-history-eyeglasses/#:~:text=The%20first%20wearable%20glasses%20known,or%20perched%20on%20the%20nose.)
+[Fascinating History of Eyeglasses](https://allabouteyes.com/see-past-fascinating-history-eyeglasses/#:~:text=The%20first%20wearable%20glasses%20known,or%20perched%20on%20the%20nose.)
 
-[Human Evolution] (https://www.britannica.com/science/human-evolution)
+[Human Evolution](https://www.britannica.com/science/human-evolution)
 
