@@ -1,5 +1,6 @@
 # BlindEyes
-![BlindEyes](https://user-images.githubusercontent.com/30392769/177596464-8ac00745-a5f7-4320-a4ae-15f6de590cd4.png =256x256)
+![](https://user-images.githubusercontent.com/30392769/177596847-fd5dacd7-d4c8-4cbc-bba8-0f4f09803db6.png| width=100)
+
 
 
 _Created for MR Dev Days 2022 - Microsoft Hackathon_
