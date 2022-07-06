@@ -46,6 +46,7 @@ Ackland, Peter et al. “World blindness and visual impairment: despite many suc
 
 Links:
 
+livescience.com/60752-human-senses.html#:~:text=There%20are%20five%20basic%20human,%2C%20hearing%2C%20smell%20and%20taste.
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/
 https://www.britannica.com/topic/history-of-the-blind-1996241
 https://allabouteyes.com/see-past-fascinating-history-eyeglasses/#:~:text=The%20first%20wearable%20glasses%20known,or%20perched%20on%20the%20nose.
