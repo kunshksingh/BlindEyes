@@ -8,7 +8,8 @@ public class AudioPlayer : MonoBehaviour
 {
     private int outputCounter;
 
-    public TextMeshPro output;
+    //public TextMeshPro output;
+    public GameObject debugSphere;
     
     
     void Start()
@@ -18,10 +19,12 @@ public class AudioPlayer : MonoBehaviour
     }
     public void PlaySound(Vector3 pos, AudioClip clip)
     {
-        output = new TextMeshPro();
-        outputCounter += 1;
+        //output = new TextMeshPro();
+        //outputCounter += 1;
+        //output.text = outputCounter + " Played sound at point (" + pos.x + ", "+pos.y+", "+pos.z+") ";
 
-        output.text = outputCounter + " Played sound at point (" + pos.x + ", "+pos.y+", "+pos.z+") ";
+        GameObject tempX = Instantiate(debugSphere, pos, Quaternion.identity);
+        
         AudioSource.PlayClipAtPoint(clip, pos); //TODO Try implmenting directional sound directly upward rather than emitting sound in all directions from point
     }
 }

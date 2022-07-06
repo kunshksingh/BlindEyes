@@ -17,16 +17,19 @@ public class AudioSweepManager : MonoBehaviour
 {
 
     public AudioClip clip;
-    public bool isEnabled;
+    public bool timerLock;
 
+
+    bool manualTrigger;
+    int raysLeft;
     float timer;
-
-    AudioSweep sweeper;
     float posX;
     float posY;
     float posZ;
+    
+    AudioSweep sweeper;
     Vector3 cameraPos;
-    int raysLeft;
+   
 
     private float angle;
     private const int raysToShoot = 20;
@@ -37,6 +40,8 @@ public class AudioSweepManager : MonoBehaviour
         timer = 0.0f;
         sweeper = new AudioSweep();
         angle = 0.0f;
+        timerLock = false;
+        manualTrigger = false;
     }
 
     // Update is called once per frame
@@ -44,6 +49,18 @@ public class AudioSweepManager : MonoBehaviour
     {
         //Trigger Method Every 7 seconds
         timer += Time.deltaTime;
+        if (timerLock)
+        {
+            if (timer < 4.1f)
+            {
+                timer = 0.0f;
+            }
+        }
+        if (manualTrigger)
+        {
+            timer = 4.5f;
+            manualTrigger = false;
+        }
         if (timer >= 5.1f)
         {
             timer = 0.0f;
@@ -87,6 +104,10 @@ public class AudioSweepManager : MonoBehaviour
 
         }
 
+    }
+    public void triggerRadarPulse()
+    {
+        manualTrigger = true;
     }
 
 
