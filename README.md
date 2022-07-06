@@ -44,7 +44,7 @@ After Steps 4-6, the top bar of your BlindEyes.sln should look like this:
 
 [GBD 2019 Blindness and Vision Impairment Collaborators, & Vision Loss Expert Group of the Global Burden of Disease Study (2021). Trends in prevalence of blindness and distance and near vision impairment over 30 years: an analysis for the Global Burden of Disease Study. The Lancet. Global health, 9(2), e130–e143. https://doi.org/10.1016/S2214-109X(20)30425-3](https://pubmed.ncbi.nlm.nih.gov/33275950/)
 
-[Stringer C. (2016). The origin and evolution of Homo sapiens. Philosophical transactions of the Royal Society of London. Series B, Biological sciences, 371(1698), 20150237. ](https://doi.org/10.1098/rstb.2015.0237](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4920294/)
+[Stringer C. (2016). The origin and evolution of Homo sapiens. Philosophical transactions of the Royal Society of London. Series B, Biological sciences, 371(1698), 20150237. https://doi.org/10.1098/rstb.2015.0237](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4920294/)
 
 [5 Human Senses](livescience.com/60752-human-senses.html#:~:text=There%20are%20five%20basic%20human,%2C%20hearing%2C%20smell%20and%20taste.)
 
