@@ -10,6 +10,7 @@ public class AudioSweep : MonoBehaviour
     //bool triggered;
 
     AudioPlayer player;
+    Camera mainCamera;
     //Vector3 position;
     //AudioClip clipCopy;
     
@@ -38,7 +39,8 @@ public class AudioSweep : MonoBehaviour
     */
     public void trigger(Vector3 pos, AudioClip clip)
     {
-        player = new AudioPlayer();
+        mainCamera = Camera.main;
+        player = mainCamera.GetComponent<AudioPlayer>();
 
         player.PlaySound(pos, clip);
       

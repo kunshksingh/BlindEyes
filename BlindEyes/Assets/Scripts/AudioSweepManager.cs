@@ -89,7 +89,7 @@ public class AudioSweepManager : MonoBehaviour
         //Vizualize Direction Vector
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/, Color.red, 20, false);
 
-        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(transform.position.x + x, posY, transform.position.z + z)/*Direction Vector*/), hit, 5000) >= 1)
+        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(transform.position.x + x, posY, transform.position.z + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
         {
  
             for(int i = 0; i<hit.Length; i++)
