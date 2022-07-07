@@ -45,8 +45,8 @@ After Steps 4-6, the top bar of your BlindEyes.sln should look like this:
 Every few seconds, you will be able to hear a sweeping radar sound that circles around you with spatial sound. That circling sound indicates is there to help you understand your distance from the objects/walls around you?
 
 Want to do this manually?
-Say "toggle pulse" to turn off/on the automatic sweeping radar sound.
-Say "show" to manually toggle a single iteration of the circling sound 
+Say "toggle" to turn off/on the automatic sweeping radar sound.
+Say "pulse" to manually toggle a single iteration of the circling sound 
 
 # FAQ/Common Errors
 
