@@ -3,6 +3,9 @@
 
 _Created for MR Dev Days 2022 - Microsoft Hackathon_
 
+Built for **HoloLens 2** using the preview release of **MRTK3**
+
+
 Humans are born with 5 senses: smell, taste, touch, hearing, and sight. However, over many millennia, humans interacting with the environment around them have lost one or more of their senses. One of humans' most informational senses that provides great detail on the space around them is sight. Sight trains our spatial awareness, and helps us remain aware of both our stationary and moving surroundings. The sensory impairment of sight, known as blindness, limits the cognitive abillity to map space and hinders conciousness of surrounding objects.
 
 The history of blindness has not been as well documented as other disabililties. Early glasses can be dated back to the 13th century in Italy, but notable visually impaired figures such as Hellen Keller and Louis Braille only date as far back as the 19th century. Though lacking visual prowess, such people have improved versions of the other four senses. 
@@ -20,9 +23,8 @@ BlindEyes is a way for the visually impaired to better see objects in their vici
 * Moving object tracing and detection
 * Visual feedback for moving objects
 
-Built for **HoloLens 2** using the preview release of **MRTK3**
 
-# Steps to Build BlindEyes onto HoloLens:
+# Steps to Build BlindEyes onto HoloLens2:
 * Step 1: Download latest release of BlindEyes onto a Windows computer/laptop **and** Visual Studio
 
 _If you want to use the latest build rather than the latest release, then open project in Unity, use a Universal Build Platform with ARM, and then follow remaining steps_
