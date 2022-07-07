@@ -29,6 +29,7 @@ public class AudioSweepManager : MonoBehaviour
     float posX;
     float posY;
     float posZ;
+    bool showSphere;
     
     AudioSweep sweeper;
     Vector3 cameraPos;
@@ -60,10 +61,15 @@ public class AudioSweepManager : MonoBehaviour
         {
             manualTrigger = true;
         });
+        keywords.Add("debug", () =>
+        {
+            showSphere = !showSphere;
+        });        
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
         initialY = transform.position.y;
+        showSphere = true;
     }
 
     // Update is called once per frame
@@ -127,7 +133,7 @@ public class AudioSweepManager : MonoBehaviour
                 if (!(hit[i].collider.gameObject == null) & hit[i].collider.gameObject.tag == "SoundMesh")
                 {
                    
-                    sweeper.trigger(hit[0].point, clip);
+                    sweeper.trigger(hit[0].point, clip, showSphere);
 
                 }
             }

@@ -37,12 +37,12 @@ public class AudioSweep : MonoBehaviour
         }
     }
     */
-    public void trigger(Vector3 pos, AudioClip clip)
+    public void trigger(Vector3 pos, AudioClip clip, bool showSphere)
     {
         mainCamera = Camera.main;
         player = mainCamera.GetComponent<AudioPlayer>();
 
-        player.PlaySound(pos, clip);
+        player.PlaySound(pos, clip, showSphere);
       
 
     }

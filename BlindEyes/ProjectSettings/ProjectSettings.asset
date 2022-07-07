@@ -136,12 +136,16 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.2
+  bundleVersion: 0.4
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 4faee1be2bafa1343a03c2d727f11416, type: 2}
+  - {fileID: 11400000, guid: c677e5c4eb85b7849a8da406775c299d, type: 2}
+  - {fileID: 983097903968105764, guid: c8a1ec48e39a20c4b9aad497bc9528d3, type: 2}
+  - {fileID: -1268752014912625456, guid: d8f80965ac0ce8240bf2b15efb5ea551, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -568,7 +572,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: BlindEyes
-  metroPackageVersion: 0.3.0.0
+  metroPackageVersion: 0.4.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
