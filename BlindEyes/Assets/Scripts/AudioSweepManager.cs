@@ -114,9 +114,9 @@ public class AudioSweepManager : MonoBehaviour
         RaycastHit[] hit = new RaycastHit[1];
         
         //Vizualize Direction Vector
-        Debug.DrawLine(transform.position, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
+        //Debug.DrawLine(transform.position, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
 
-        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(posX + x, 0, posZ + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
+        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(posX + x, posY, posZ + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
         {
  
             for(int i = 0; i<hit.Length; i++)
