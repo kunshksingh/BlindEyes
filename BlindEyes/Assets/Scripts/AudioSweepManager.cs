@@ -35,6 +35,7 @@ public class AudioSweepManager : MonoBehaviour
    
     private float angle;
     private const int raysToShoot = 20;
+    private float initialY;
 
     KeywordRecognizer keywordRecognizer;
     Dictionary<string, System.Action> keywords;
@@ -46,6 +47,7 @@ public class AudioSweepManager : MonoBehaviour
         timer = 0.0f;
         sweeper = new AudioSweep();
         angle = 0.0f;
+        raysLeft = raysToShoot;
         timerLock = false;
         manualTrigger = false;
         pointLock = false;
@@ -61,6 +63,7 @@ public class AudioSweepManager : MonoBehaviour
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         keywordRecognizer.Start();
+        initialY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -90,7 +93,7 @@ public class AudioSweepManager : MonoBehaviour
         {
             pointLock = false;
             timer = 0.0f;
-            raysLeft = 20;
+            raysLeft = raysToShoot;
             angle = 0.0f;
         }
         else if (timer >= 4.5f & raysLeft > 0)
@@ -116,7 +119,7 @@ public class AudioSweepManager : MonoBehaviour
         //Vizualize Direction Vector
         //Debug.DrawLine(transform.position, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
 
-        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(posX + x, posY, posZ + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
+        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(posX + x, initialY, posZ + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
         {
  
             for(int i = 0; i<hit.Length; i++)
