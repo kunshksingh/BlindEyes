@@ -40,6 +40,19 @@ After Steps 4-6, the top bar of your BlindEyes.sln should look like this:
 * Step 8: Once the download finishes, go to "All Apps" on your Hololens2 and search for BlindEyes
 * Step 9: Enjoy :)
 
+# How To Use
+
+Every few seconds, you will be able to hear a sweeping radar sound that circles around you with spatial sound. That circling sound indicates is there to help you understand your distance from the objects/walls around you?
+
+Want to do this manually?
+Say "toggle pulse" to turn off/on the automatic sweeping radar sound.
+Say "trigger" to manually toggle a single iteration of the circling sound 
+
+# FAQ/Common Errors
+
+**Q. How do I fix the deployment error "Bootstrapper could not connect to machine" ?**
+A. Very common error with building to Hololens 2. To fix this error, unplug your Hololens 2 from your laptop and replug it in. Make sure you **DO NOT** exit out of the .sln file while you do so. Ensure steps 4-6 are true and that your top bar still has device selected. Finally, rebuild/redeploy the .sln by clicking the same green play button with no color fill.
+
 ## Sources
 
 [Ackland, P., Resnikoff, S., & Bourne, R. (2017). World blindness and visual impairment: despite many successes, the problem is growing. Community eye health, 30(100), 71–73.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5820628/)
