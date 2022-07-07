@@ -12,7 +12,7 @@ BlindEyes is a way for the visually impaired to better see objects in their vici
 
 ## Features:
 * Togglable, automatic radar scanning of surrounding space using spatial sound
-* Manual radar scanning of surrounding space using spatial sound (WIP)
+* Manual radar scanning of surrounding space using spatial sound
 * Visual feedback for radar scanning a space (WIP)
 
 ## Future Features:
@@ -45,13 +45,20 @@ After Steps 4-6, the top bar of your BlindEyes.sln should look like this:
 Every few seconds, you will be able to hear a sweeping radar sound that circles around you with spatial sound. That circling sound indicates is there to help you understand your distance from the objects/walls around you?
 
 Want to do this manually?
+
 Say "toggle" to turn off/on the automatic sweeping radar sound.
+
 Say "pulse" to manually toggle a single iteration of the circling sound 
 
 # FAQ/Common Errors
 
 **Q. How do I fix the deployment error "Bootstrapper could not connect to machine" ?**
+
 A. Very common error with building to Hololens 2. To fix this error, unplug your Hololens 2 from your laptop and replug it in. Make sure you **DO NOT** exit out of the .sln file while you do so. Ensure steps 4-6 are true and that your top bar still has device selected. Finally, rebuild/redeploy the .sln by clicking the same green play button with no color fill.
+
+**Q. Can I disable visual artifacts created by each sound?"
+
+A. Of course! In the Hierarchy, navigate to the _MRTK XR Rig>Camera Offset>Main Camera_ and look for the script component "Audio Player." In AudioPlayer, comment out lines 12, 23, and 24. No more debug points!
 
 ## Sources
 
