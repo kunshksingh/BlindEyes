@@ -46,7 +46,7 @@ Every few seconds, you will be able to hear a sweeping radar sound that circles 
 
 Want to do this manually?
 Say "toggle pulse" to turn off/on the automatic sweeping radar sound.
-Say "trigger" to manually toggle a single iteration of the circling sound 
+Say "show" to manually toggle a single iteration of the circling sound 
 
 # FAQ/Common Errors
 
