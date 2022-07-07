@@ -7,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 
+using UnityEngine.Windows.Speech;
+using System.Linq;
 
 using TMPro;
 
@@ -21,6 +23,7 @@ public class AudioSweepManager : MonoBehaviour
 
 
     bool manualTrigger;
+    bool pointLock;
     int raysLeft;
     float timer;
     float posX;
@@ -30,9 +33,12 @@ public class AudioSweepManager : MonoBehaviour
     AudioSweep sweeper;
     Vector3 cameraPos;
    
-
     private float angle;
     private const int raysToShoot = 20;
+
+    KeywordRecognizer keywordRecognizer;
+    Dictionary<string, System.Action> keywords;
+
 
     void Start()
     {
@@ -42,12 +48,31 @@ public class AudioSweepManager : MonoBehaviour
         angle = 0.0f;
         timerLock = false;
         manualTrigger = false;
+        pointLock = false;
+        keywords = new Dictionary<string, System.Action>();
+        keywords.Add("toggle", () =>
+        {
+            timerLock = !timerLock;
+        });
+        keywords.Add("pulse", () =>
+        {
+            manualTrigger = true;
+        });
+        keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+        keywordRecognizer.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Trigger Method Every 7 seconds
+        if (!pointLock)
+        {
+            posX = transform.position.x;
+            posY = transform.position.y;
+            posZ = transform.position.z;
+        }
+        //Trigger Method Every 4.1 seconds
         timer += Time.deltaTime;
         if (timerLock)
         {
@@ -63,12 +88,14 @@ public class AudioSweepManager : MonoBehaviour
         }
         if (timer >= 5.1f)
         {
+            pointLock = false;
             timer = 0.0f;
             raysLeft = 20;
             angle = 0.0f;
         }
         else if (timer >= 4.5f & raysLeft > 0)
         {
+            pointLock = true;
             timer -= 0.4f;
             raysLeft -= 1;
             angle += 2 * Mathf.PI / raysToShoot;
@@ -87,9 +114,9 @@ public class AudioSweepManager : MonoBehaviour
         RaycastHit[] hit = new RaycastHit[1];
         
         //Vizualize Direction Vector
-        //Debug.DrawLine(transform.position, new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z)/*Direction Vector*/, Color.red, 20, false);
+        Debug.DrawLine(transform.position, new Vector3(posX + x, posY, posZ + z)/*Direction Vector*/, Color.red, 20, false);
 
-        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(transform.position.x + x, posY, transform.position.z + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
+        if (Physics.RaycastNonAlloc(new Ray(transform.position, new Vector3(posX + x, 0, posZ + z).normalized/*Direction Vector*/), hit, 5000) >= 1)
         {
  
             for(int i = 0; i<hit.Length; i++)
@@ -103,8 +130,18 @@ public class AudioSweepManager : MonoBehaviour
             }
 
         }
-
+        
     }
+    private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
+    {
+        System.Action keywordAction;
+        // if the keyword recognized is in our dictionary, call that Action.
+        if (keywords.TryGetValue(args.text, out keywordAction))
+        {
+            keywordAction.Invoke();
+        }
+    }
+    /*
     public void triggerRadarPulse()
     {
         manualTrigger = true;
@@ -114,7 +151,7 @@ public class AudioSweepManager : MonoBehaviour
         timerLock = !timerLock;
     }
 
-
+    */
 
 
 
