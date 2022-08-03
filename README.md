@@ -5,6 +5,8 @@ _Created for MR Dev Days 2022 - Microsoft Hackathon_
 
 Built for **HoloLens 2** using the preview release of **MRTK3**
 
+[Devpost Link](https://devpost.com/software/to-be-updated)
+
 
 Humans are born with 5 senses: smell, taste, touch, hearing, and sight. However, over millennia, many humans interacting with the environment around them have lost one or more of their senses. One of humans' most informational senses that provides great detail on the space around them is sight. Sight trains our spatial awareness, and helps us remain aware of both our stationary and moving surroundings. The sensory impairment of sight, known as blindness, limits the cognitive abillity to map space and hinders conciousness of surrounding objects.
 
